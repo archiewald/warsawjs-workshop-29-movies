@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { VideoListComponent } from "./components/video-list/video-list.component";
 import { VideoItemComponent } from "./components/video-item/video-item.component";
 import { PageBestVideosListComponent } from "./components/page-best-videos-list/page-best-videos-list.component";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { PageBestVideosListComponent } from "./components/page-best-videos-list/
     PageVideoNotFoundComponent,
     PageVideoProfileComponent
   ],
-  imports: [CommonModule, LogicRoutingModule, HttpClientModule],
+  imports: [CommonModule, LogicRoutingModule, HttpClientModule, RouterModule],
   providers: [VideosService]
 })
 export class LogicModule {}

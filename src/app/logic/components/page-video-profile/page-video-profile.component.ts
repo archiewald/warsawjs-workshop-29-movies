@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, RouterModule, Router } from "@angular/router";
 import { Video } from "../../models/video";
 import { VideosService } from "../../services/videos.service";
 
@@ -13,11 +13,15 @@ export class PageVideoProfileComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private videosService: VideosService
+    private videosService: VideosService,
+    private router: Router
   ) {}
 
   async ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
     this.video = await this.videosService.fetchVideo(id);
+    if (this.video === undefined) {
+      this.router.navigateByUrl("/videos/not-found");
+    }
   }
 }
