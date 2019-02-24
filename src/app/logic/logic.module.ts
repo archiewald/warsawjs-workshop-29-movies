@@ -8,6 +8,7 @@ import { VideosService } from "./services/videos.service";
 import { HttpClientModule } from "@angular/common/http";
 import { VideoListComponent } from "./components/video-list/video-list.component";
 import { VideoItemComponent } from "./components/video-item/video-item.component";
+import { PageBestVideosListComponent } from "./components/page-best-videos-list/page-best-videos-list.component";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VideoItemComponent } from "./components/video-item/video-item.component
     PageVideoNotFoundComponent,
     PageVideoProfileComponent,
     VideoListComponent,
-    VideoItemComponent
+    VideoItemComponent,
+    PageBestVideosListComponent
   ],
   exports: [
     PageVideoListComponent,

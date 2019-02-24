@@ -11,11 +11,13 @@ import { VideosService } from "../../services/videos.service";
 export class PageVideoProfileComponent implements OnInit {
   video: Video = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private videosService: VideosService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private videosService: VideosService
+  ) {}
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(async (params) => {
-      this.video = await this.videosService.fetchVideo(params.id);
-    }
+  async ngOnInit() {
+    const id = this.activatedRoute.snapshot.params.id;
+    this.video = await this.videosService.fetchVideo(id);
   }
 }

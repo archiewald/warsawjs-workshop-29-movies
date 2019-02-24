@@ -4,11 +4,16 @@ import { Routes, RouterModule } from "@angular/router";
 import { PageVideoListComponent } from "./components/page-video-list/page-video-list.component";
 import { PageVideoNotFoundComponent } from "./components/page-video-not-found/page-video-not-found.component";
 import { PageVideoProfileComponent } from "./components/page-video-profile/page-video-profile.component";
+import { PageBestVideosListComponent } from "./components/page-best-videos-list/page-best-videos-list.component";
 
 const routes: Routes = [
   {
     path: "",
     component: PageVideoListComponent
+  },
+  {
+    path: "best",
+    component: PageBestVideosListComponent
   },
   {
     path: "not-found",
