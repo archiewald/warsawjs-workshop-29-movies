@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Video } from "../../models/video";
+import { VideosService } from "../../services/videos.service";
 
 @Component({
   selector: "app-page-video-profile",
@@ -10,12 +11,11 @@ import { Video } from "../../models/video";
 export class PageVideoProfileComponent implements OnInit {
   video: Video = null;
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private videosService: VideosService) {}
 
   ngOnInit() {
-    this.activatedRoute.params.toPromise().then(params => {
-      console.log({ params });
-    });
-    debugger;
+    this.activatedRoute.params.subscribe(async (params) => {
+      this.video = await this.videosService.fetchVideo(params.id);
+    }
   }
 }
