@@ -6,12 +6,16 @@ import { PageVideoProfileComponent } from "./components/page-video-profile/page-
 import { LogicRoutingModule } from "./logic-routing.module";
 import { VideosService } from "./services/videos.service";
 import { HttpClientModule } from "@angular/common/http";
+import { VideoListComponent } from '../video-list/video-list.component';
+import { VideoItemComponent } from '../video-item/video-item.component';
 
 @NgModule({
   declarations: [
     PageVideoListComponent,
     PageVideoNotFoundComponent,
-    PageVideoProfileComponent
+    PageVideoProfileComponent,
+    VideoListComponent,
+    VideoItemComponent
   ],
   exports: [
     PageVideoListComponent,

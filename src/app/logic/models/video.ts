@@ -7,6 +7,7 @@ export interface Video {
   duration?: number;
   rate?: number;
 
-  thumb_url: string;
-  video_url: string;
+  imageUrl?: string;
+  thumb_url?: string;
+  video_url?: string;
 }
