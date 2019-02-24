@@ -1,7 +1,9 @@
 <div>
-  <h2>
-    {{ video.title }}
-  </h2>
+  <a routerLink="/videos/{{ video.id }}">
+    <h2>
+      {{ video.title }}
+    </h2>
+  </a>
   <p>
     {{ video.description }}
   </p>

@@ -13,4 +13,8 @@ export class VideosService {
   fetchVideos() {
     return this.http.get<Video[]>(environment.backendURL).toPromise();
   }
+
+  async fetchVideo(id: string) {
+    return (await this.fetchVideos()).find(video => video.id === id);
+  }
 }
