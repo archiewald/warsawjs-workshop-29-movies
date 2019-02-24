@@ -1,8 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LogicModule } from "./logic/logic.module";
-import { PageHomeComponent } from "./logic/components/page-home/page-home.component";
-import { PageContactComponent } from "./logic/components/page-contact/page-contact.component";
+import { PageHomeComponent } from "./components/page-home/page-home.component";
+import { PageContactComponent } from "./components/page-contact/page-contact.component";
 
 const routes: Routes = [
   {
@@ -12,11 +11,15 @@ const routes: Routes = [
   {
     path: "contact",
     component: PageContactComponent
+  },
+  {
+    path: "videos",
+    loadChildren: "./logic/logic.module#LogicModule"
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), LogicModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
